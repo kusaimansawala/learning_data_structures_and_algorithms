@@ -14,11 +14,10 @@ void LinkedList::showTheLinkedList() {
 	}
 	ptr = HEAD;
 	cout<<"The contents of the LinkedList are: ";
-	while(ptr->NEXT) {
-		cout<<ptr->value<<", ";
+	while(ptr) {
+		cout<<ptr->value<<" ";
 		ptr = ptr->NEXT;
 	}
-	cout<<ptr->value<<"."<<endl;
 }
 //Append: Add a node to the very end
 void LinkedList::appendToLinkedList(int val) {
@@ -116,13 +115,12 @@ LinkedList::~LinkedList() {
 	if(HEAD == NULL) {
 		return;
 	}
-	while(HEAD->NEXT) {
+	while(HEAD) {
 		struct node* ptr;
 		ptr = HEAD;
 		HEAD = HEAD->NEXT;
 		delete ptr;
 	}
-	delete HEAD;
 	cout<<"The object has been destructed"<<endl;
 }
 
